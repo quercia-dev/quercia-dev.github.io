@@ -6,99 +6,119 @@
     <title>Quercia Dev</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-dark-green: #0D1F22;
+            --secondary-green: #1E3A40;
+            --accent-green: #2ECC71;
+            --text-light: #E6F3F5;
+        }
         body {
-            background-color: #f7fafc;
+            background-color: var(--primary-dark-green);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
         }
         .gradient-header {
-            background: linear-gradient(135deg, #83b8EC 0%, #9d5521 60%);
+            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--accent-green) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .gradient-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(46, 204, 113, 0.1) 0%, transparent 70%);
+            z-index: 1;
         }
         .team-icon {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 4px solid var(--accent-green);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .team-icon:hover {
+            transform: scale(1.05);
         }
         .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--secondary-green);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            transition: all 0.3s ease;
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: var(--accent-green);
+        }
+        .card-container {
+            background-color: var(--secondary-green);
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
     </style>
-    <script>
-        window.onload = function() {
-        const link = document.createElement("a");
-        link.href = "assets/quercia-card.png";
-        link.download = "quercia-dev-info.png";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-         };
-        </script>
 </head>
 <body class="antialiased">
-    <div class="gradient-header text-white py-16 text-center">
-        <div class="container mx-auto px-4">
-            <img src="/assets/logo.png" alt="Quercia Dev Team" class="team-icon mx-auto mb-6">
-            <h1 class="text-4xl font-bold mb-4">Quercia Dev</h1>
-            <p class="text-xl opacity-90">development team from milan, italy</p>
+    <div class="gradient-header text-white py-20 text-center relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <img src="/assets/logo.png" alt="Quercia Dev Team" class="team-icon mx-auto mb-8">
+            <h1 class="text-5xl font-bold mb-4 text-white">Your Business, Our AI</h1>
+            <p class="text-xl opacity-80">Hands on development team from Milan (IT)</p>
         </div>
     </div>
 
     <div class="container mx-auto max-w-4xl px-4 py-12">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <div class="p-6">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">The Team</h2>
-                <p class="text-gray-600 mb-6">
+        <div class="card-container overflow-hidden">
+            <div class="p-8">
+                <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-accent-green pb-3">The Team</h2>
+                <p class="text-text-light mb-8 text-lg">
                     Tebe Nigrelli and Tommaso Ferracina are final year students at Bocconi, 
                     studying Mathematical and Computing Sciences for AI.
                 </p>
                 
-                <div class="space-y-4">
-                    <div class="project-card bg-gray-50 p-5 rounded-lg border border-gray-100 hover:bg-white">
-                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Tebe Nigrelli</h3>
-                        <p class="text-gray-500 mb-2"> Master at Artificial Intelligence</p>
-                        <ul class="list-disc list-inside text-gray-600">
+                <div class="space-y-6">
+                    <div class="project-card p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-accent-green mb-3">Tebe Nigrelli</h3>
+                        <p class="text-text-light opacity-80 mb-3"> Master at Artificial Intelligence</p>
+                        <ul class="list-disc list-inside text-text-light space-y-2">
                             <li>Bikemi project</li>
                             <li>Bikemi project v2</li>
                             <li>Maccheroni and Brunel are fighting for the chance to supervise his thesis</li>
                         </ul>
                     </div>
 
-                    <div class="project-card bg-gray-50 p-5 rounded-lg border border-gray-100 hover:bg-white">
-                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Tommaso Ferracina</h3>
-                        <p class="text-gray-500 mb-2">Lowly Bachelor of AI</p>
-                        <ul class="list-disc list-inside text-gray-600">
+                    <div class="project-card p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-accent-green mb-3">Tommaso Ferracina</h3>
+                        <p class="text-text-light opacity-80 mb-3">Lowly Bachelor of AI</p>
+                        <ul class="list-disc list-inside text-text-light space-y-2">
                             <li>Alfagommy</li>
                             <li>Bsjc merchant</li>
                         </ul>
                     </div>
                 </div>
 
-                <br>
-
-                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Projects</h2>
+                <h2 class="text-3xl font-bold text-white mt-12 mb-6 border-b-2 border-accent-green pb-3">Projects</h2>
                 
-                <div class="space-y-4">
-                    <div class="project-card bg-gray-50 p-5 rounded-lg border border-gray-100 hover:bg-white">
-                        <h3 class="text-xl font-bold text-indigo-600 mb-2">Attimo</h3>
-                        <p class="text-gray-800 font-bold mb-2">Open Source Productivity App</p> <p class="text-gray-500 mb-2"> August 2024 - Present</p>
-                        <ul class="list-disc list-inside text-gray-600">
-                            <li>Tracking the development of Attimo with Attimo </li>
+                <div class="space-y-6">
+                    <div class="project-card p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold text-accent-green mb-3">Attimo</h3>
+                        <p class="text-white font-semibold mb-2">Open Source Productivity App</p>
+                        <p class="text-text-light opacity-80 mb-3">August 2024 - Present</p>
+                        <ul class="list-disc list-inside text-text-light space-y-2">
+                            <li>Tracking the development of Attimo with Attimo</li>
                             <li>Noteworthy achievement here</li>
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <footer class="bg-gray-100 py-6 text-center">
-        <p class="text-gray-600">© 2025 Quercia Dev. All rights reserved.</p>
+    <footer class="bg-secondary-green py-8 text-center">
+        <p class="text-text-light opacity-70">© 2025 Quercia Dev. All rights reserved.</p>
     </footer>
 </body>
 </html>
