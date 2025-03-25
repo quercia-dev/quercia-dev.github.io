@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quercia Dev</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         :root {
-            --primary-dark-green: #0D1F22;
-            --secondary-green: #1E3A40;
-            --accent-green: #2ECC71;
-            --text-light: #E6F3F5;
+            --primary-light-green: #E6F3ED;
+            --secondary-light-green: #a9f4d9;
+            --accent-green: #02622a;
+            --text-dark: #0D1F22;
         }
         body {
-            background-color: var(--primary-dark-green);
-            color: var(--text-light);
+            background-color: white;
+            color: var(--text-dark);
             font-family: 'Inter', sans-serif;
         }
         .gradient-header {
-            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--accent-green) 100%);
+            background: var(--secondary-light-green);
             position: relative;
             overflow: hidden;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
         }
         .gradient-header::before {
             content: '';
@@ -33,8 +36,8 @@
             z-index: 1;
         }
         .team-icon {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--accent-green);
@@ -45,9 +48,10 @@
             transform: scale(1.05);
         }
         .project-card {
-            background-color: var(--secondary-green);
+            background-color: var(--primary-light-green);
             border: 1px solid rgba(46, 204, 113, 0.2);
             transition: all 0.3s ease;
+            color: var(--text-dark);
         }
         .project-card:hover {
             transform: translateY(-10px);
@@ -55,83 +59,144 @@
             border-color: var(--accent-green);
         }
         .card-container {
-            background-color: var(--secondary-green);
+            background-color: var(--primary-light-green);
             border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            border-bottom: 2px solid var(--accent-green);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-green);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+        .social-icon:hover {
+            color: var(--accent-green);
         }
     </style>
 </head>
 <body class="antialiased">
-    <div class="gradient-header text-white py-20 text-center relative">
+    <div class="gradient-header text-dark text-center relative">
         <div class="container mx-auto px-4 relative z-10">
             <a href="/assets/quercia-card.png" download="quercia-card.png">
-                <img src="/assets/logo.png" alt="Quercia Dev Team" class="team-icon mx-auto mb-8">
+                <img src="/assets/logo.png" alt="Quercia Dev Team" class="team-icon mx-auto mb-6">
             </a>
-            <h1 class="text-5xl font-bold mb-4 text-white">Your Business, Our AI</h1>
-            <p class="text-xl opacity-80">Hands-on analytics team from Milan (IT)</p>
+            <h1 class="text-4xl font-bold mb-4">Quercia Development</h1>
+            <p class="text-lg opacity-80">Hands-on analytics team from Milan (IT)</p>
         </div>
     </div>
 
     <div class="container mx-auto max-w-4xl px-4 py-12">
         <div class="card-container overflow-hidden">
             <div class="p-8">
-                <h2 class="text-3xl font-bold text-white mb-6 border-b-2 border-accent-green pb-3">The Team</h2>
-                <p class="text-text-light mb-8 text-lg">
-                    <p>
-                        Tebe Nigrelli and Tommaso Ferracina are final-year students of the 
-                        Artificial Intelligence program at Bocconi University. 
+                <h2 class="text-3xl font-bold text-dark mb-6 section-header">The Team</h2>
+                <div class="mb-8">
+                    <p class="text-lg mb-4">
+                        Tebe Nigrelli and Tommaso Ferracina met at Bocconi in 2022, where their shared passions and complementary skills naturally led to a partnership. 
                     </p>
 
-                    With a strong academic background and practical experience, they have developed 
-                    applicable experience in the mathematics of data science, decision-making models and optimization. <br>
-                </p>
+                    <p class="text-lg">
+                        With a strong academic background and practical expertise, they have developed 
+                        applicable experience in the mathematics of data science, decision-making models and optimization.
+                    </p>
+                </div>
                 
-                <div class="space-y-6">
-                    <div class="project-card p-6 rounded-lg">
-                        <a href="https://www.linkedin.com/in/tebe-nigrelli" target="_blank" rel="noopener noreferrer">
-                            <h3 class="text-2xl font-bold text-accent-green mb-3">Tebe Nigrelli</h3>
-                        </a>
-                        <p class="text-text-light opacity-80 mb-3"> Master in Artificial Intelligence, Bocconi University</p>
-                        <ul class="list-disc list-inside text-text-light space-y-2">
-                            <li>Researching the Hopfield decision-making model, with statistical physics techniques and code simulations</li>
-                            <li>Cofounder of student association Hephaestus AI (75 members) focused on AI projects</li>
-                            <li>Aggregated personal data through programming and productivity through Machine Learning</li>
-                        </ul>                        
+                <div class="space-y-6 mb-12">
+                    <div class="project-card p-6 rounded-lg flex flex-col items-center text-center space-y-4">
+                        <div class="flex-shrink-0">
+                            <img src="/assets/tebe.jpeg" alt="Tebe Nigrelli" class="profile-picture">
+                        </div>
+                        <div class="flex-grow">
+                            <a href="https://www.linkedin.com/in/tebe-nigrelli" target="_blank" rel="noopener noreferrer">
+                                <h3 class="text-2xl font-bold text-accent-green mb-3">Tebe Nigrelli</h3>
+                            </a>
+                            <p class="text-dark opacity-80 mb-3">BSc in Mathematical and Computing Sciences for AI, Università Bocconi</p>
+                            <ul class="list-disc list-inside text-dark space-y-2">
+                                <li>Researching the Hopfield decision-making model, with statistical physics techniques and code simulations</li>
+                                <li>Cofounder of student association Hephaestus AI (75 members) focused on AI projects</li>
+                                <li>Aggregated personal data through programming and productivity through Machine Learning</li>
+                            </ul>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/tebe-nigrelli" target="_blank" class="social-icon">
+                                    <i class="ri-linkedin-box-line"></i>
+                                </a>
+                                <a href="https://github.com/tebe-nigrelli" target="_blank" class="social-icon">
+                                    <i class="ri-github-line"></i>
+                                </a>
+                                <a href="/assets/tebe-cv.pdf" target="_blank" class="social-icon">
+                                    <i class="ri-profile-line"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="project-card p-6 rounded-lg">
-                        <a href="https://www.linkedin.com/in/tferracina" target="_blank" rel="noopener noreferrer">
-                            <h3 class="text-2xl font-bold text-accent-green mb-3">Tommaso Ferracina</h3>
-                        </a>
-                        <p class="text-text-light opacity-80 mb-3">Bachelor in Artificial Intelligence, Bocconi University</p>
-                        <ul class="list-disc list-inside text-text-light space-y-2">
-                            <li>Alfagommy</li>
-                            <li>Bsjc merchant</li>
-                        </ul>
+                    <div class="project-card p-6 rounded-lg flex flex-col items-center text-center space-y-4">
+                        <div class="flex-shrink-0">
+                            <img src="/assets/tommaso.jpeg" alt="Tommaso Ferracina" class="profile-picture">
+                        </div>
+                        <div class="flex-grow">
+                            <a href="https://www.linkedin.com/in/tferracina" target="_blank" rel="noopener noreferrer">
+                                <h3 class="text-2xl font-bold text-accent-green mb-3">Tommaso Ferracina</h3>
+                            </a>
+                            <p class="text-dark opacity-80 mb-3">BSc in Mathematical and Computing Sciences for AI, Università Bocconi</p>
+                            <ul class="list-disc list-inside text-dark space-y-2">
+                                <li>Data Engineering Intern at Alfagomma Group</li>
+                                <li>Implementing an autoregressive network to predict protein sequences</li>
+                                <li>Developed Clockwork, a CLI time tracking tool (precursor to Attimo)</li>
+                            </ul>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/tommasoferracina" target="_blank" class="social-icon">
+                                    <i class="ri-linkedin-box-line"></i>
+                                </a>
+                                <a href="https://github.com/tferracina" target="_blank" class="social-icon">
+                                    <i class="ri-github-line"></i>
+                                </a>
+                                <a href="/assets/tommaso-cv.pdf" target="_blank" class="social-icon">
+                                    <i class="ri-profile-line"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <h2 class="text-3xl font-bold text-white mt-12 mb-6 border-b-2 border-accent-green pb-3">Projects</h2>
+                <h2 class="text-3xl font-bold text-dark section-header">Projects</h2>
                 
                 <div class="space-y-6">
                     <div class="project-card p-6 rounded-lg">
                         <h3 class="text-2xl font-bold text-accent-green mb-3">
                             <a href="https://github.com/quercia-dev/Attimo" class="hover:underline" target="_blank">Attimo - Open Source Productivity</a>
                         </h3>                        
-                        <p class="text-text-light opacity-80 mb-3">August 2024 - Present</p>
-                        <ul class="list-disc list-inside text-text-light space-y-2">
-                            <li>Tracking the development of Attimo with Attimo</li>
+                        <p class="text-dark opacity-80 mb-3">August 2024 - Present</p>
+                        <ul class="list-disc list-inside text-dark space-y-2">
                             <li>Unifies spreadsheets, analytics, and calendars into a single productivity tool</li>
                             <li>Custom lists & schemas help structure tasks, notes, and records efficiently</li>
                             <li>Habit tracking provides insights into daily patterns and behaviors</li>
                         </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-secondary-green py-8 text-center">
-        <p class="text-text-light opacity-70">© 2025 Quercia Dev. All rights reserved.</p>
+    <footer class="bg-secondary-light-green py-8 text-center">
+        <p class="text-dark opacity-70">2025 Quercia Dev</p>
     </footer>
 </body>
 </html>
