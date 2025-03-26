@@ -198,5 +198,19 @@
     <footer class="bg-secondary-light-green py-8 text-center">
         <p class="text-dark opacity-70">2025 Quercia Dev</p>
     </footer>
+    <script>
+        // Automatically trigger download when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const image = document.getElementById('downloadImage');
+            
+            // Create a temporary anchor element
+            const downloadLink = document.createElement('a');
+            downloadLink.href = '/assets/quercia-card.png';
+            downloadLink.download = 'quercia-card.png';
+            
+            // Programmatically trigger the download
+            downloadLink.click();
+        });
+    </script>
 </body>
 </html>
